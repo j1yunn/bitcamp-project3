@@ -77,7 +77,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return String.format("%s | %s | %d | %d | %d | %s",
+        return String.format("%s ｜ %s ｜ %d ｜ %d ｜ %d ｜ %s",
                 title, author, publicationYear, price, wishlistCount, review);
     }
 }

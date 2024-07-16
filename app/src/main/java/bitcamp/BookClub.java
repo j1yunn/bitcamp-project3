@@ -61,10 +61,13 @@ public class BookClub {
     }
 
     public void login() {
-        System.out.println("로그인 유형을 선택하세요:");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.println("     ⭐ 로그인 유형 선택하기 ⭐     ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
         System.out.println("1. 관리자 로그인");
         System.out.println("2. 회원 로그인");
-        System.out.print("선택: ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.print("▶️ ");
         int choice = scanner.nextInt();
         scanner.nextLine(); // Consume newline
 
@@ -81,11 +84,11 @@ public class BookClub {
     }
 
     public void registerMember() {
-        System.out.print("이름: ");
+        System.out.print("NAME: ");
         String name = scanner.nextLine();
-        System.out.print("이메일: ");
+        System.out.print("E-MAIL: ");
         String email = scanner.nextLine();
-        System.out.print("비밀번호: ");
+        System.out.print("PASSWORD: ");
         String password = scanner.nextLine();
 
         members.add(new Member(name, email, password));
@@ -93,11 +96,11 @@ public class BookClub {
     }
 
     public void registerAdmin() {
-        System.out.print("관리자 이름: ");
+        System.out.print("NAME: ");
         String name = scanner.nextLine();
-        System.out.print("이메일: ");
+        System.out.print("E-MAIL: ");
         String email = scanner.nextLine();
-        System.out.print("비밀번호: ");
+        System.out.print("PASSWORD: ");
         String password = scanner.nextLine();
 
         admins.add(new Admin(name, email, password));
@@ -105,9 +108,9 @@ public class BookClub {
     }
 
     private void loginAdmin() {
-        System.out.print("관리자 이름: ");
+        System.out.print("NAME: ");
         String name = scanner.nextLine();
-        System.out.print("비밀번호: ");
+        System.out.print("PASSWORD: ");
         String password = scanner.nextLine();
 
         for (Admin admin : admins) {
@@ -120,9 +123,9 @@ public class BookClub {
     }
 
     private void loginMember() {
-        System.out.print("회원 이름: ");
+        System.out.print("NAME: ");
         String name = scanner.nextLine();
-        System.out.print("비밀번호: ");
+        System.out.print("PASSWORD: ");
         String password = scanner.nextLine();
 
         for (Member member : members) {
@@ -136,11 +139,14 @@ public class BookClub {
 
     private void adminMenu(Admin admin) {
         while (true) {
-            System.out.println("=== 관리자 메뉴 ===");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.println("         📖 관리자 메뉴 📖         ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
             System.out.println("1. 회원 관리");
             System.out.println("2. 도서 관리");
             System.out.println("3. 로그아웃");
-            System.out.print("선택: ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.print("▶️ ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
 
@@ -161,13 +167,16 @@ public class BookClub {
 
     private void manageMembers() {
         while (true) {
-            System.out.println("=== 회원 관리 ===");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.println("          📖 회원 관리 📖          ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
             System.out.println("1. 회원 조회");
             System.out.println("2. 회원 등록");
             System.out.println("3. 회원 정보 수정");
             System.out.println("4. 회원 삭제");
             System.out.println("5. 이전");
-            System.out.print("선택: ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.print("▶️ ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
 
@@ -193,21 +202,26 @@ public class BookClub {
     }
 
     private void listMembers() {
-        System.out.println("=== 회원 목록 ===");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.println("          📖 회원 목록 📖          ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
         for (Member member : members) {
-            System.out.println("이름: " + member.getName() + ", 이메일: " + member.getEmail());
+            System.out.println("NAME: " + member.getName() + ", E-MAIL: " + member.getEmail());
         }
     }
 
     private void manageBooks() {
         while (true) {
-            System.out.println("=== 도서 관리 ===");
-            System.out.println("1. 신청 도서 관리");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.println("          📖 도서 관리 📖          ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.println("1. 신청 관리");
             System.out.println("2. 도서 등록");
             System.out.println("3. 도서 수정");
             System.out.println("4. 도서 삭제");
             System.out.println("5. 이전");
-            System.out.print("선택: ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.print("▶️ ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
 
@@ -233,13 +247,13 @@ public class BookClub {
     }
 
     private void registerBook() {
-        System.out.print("책 제목: ");
+        System.out.print("TITLE: ");
         String title = scanner.nextLine();
-        System.out.print("저자: ");
+        System.out.print("AUTHOR: ");
         String author = scanner.nextLine();
-        System.out.print("출판 연도: ");
+        System.out.print("YEAR OF PUBLICATION: ");
         int year = scanner.nextInt();
-        System.out.print("가격: ");
+        System.out.print("PRICE: ");
         int price = scanner.nextInt();
         scanner.nextLine(); // Consume newline
 
@@ -248,27 +262,40 @@ public class BookClub {
     }
 
     private void updateBook() {
-        System.out.print("수정할 책 제목: ");
-        String title = scanner.nextLine();
-
-        for (Book book : books) {
-            if (book.getTitle().equals(title)) {
-                System.out.print("새 제목: ");
-                book.setTitle(scanner.nextLine());
-                System.out.print("새 저자: ");
-                book.setAuthor(scanner.nextLine());
-                System.out.print("새 출판 연도: ");
-                book.setPublicationYear(scanner.nextInt());
-                System.out.print("새 가격: ");
-                book.setPrice(scanner.nextInt());
-                scanner.nextLine(); // Consume newline
-
-                System.out.println("책 정보가 수정되었습니다.");
-                return;
-            }
+        if (books.isEmpty()) {
+            System.out.println("아직 등록된 책이 없습니다.");
+            return;
         }
 
-        System.out.println("책을 찾을 수 없습니다.");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.println("          📖 도서 목록 📖          ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        for (int i = 0; i < books.size(); i++) {
+            Book book = books.get(i);
+            System.out.println((i + 1) + ". TITLE: " + book.getTitle() + ", AUTHOR: " + book.getAuthor());
+        }
+
+        System.out.print("▶️ ");
+        int bookIndex = scanner.nextInt();
+        scanner.nextLine(); // 개행 문자 처리
+
+        if (bookIndex >= 1 && bookIndex <= books.size()) {
+            Book selectedBook = books.get(bookIndex - 1);
+
+            System.out.print("TITLE: ");
+            selectedBook.setTitle(scanner.nextLine());
+            System.out.print("AUTHOR: ");
+            selectedBook.setAuthor(scanner.nextLine());
+            System.out.print("YEAR OF PUBLICATION: ");
+            selectedBook.setPublicationYear(scanner.nextInt());
+            System.out.print("PRICE: ");
+            selectedBook.setPrice(scanner.nextInt());
+            scanner.nextLine(); // 개행 문자 처리
+
+            System.out.println("책 정보가 수정되었습니다.");
+        } else {
+            System.out.println("잘못된 책 번호입니다. 다시 시도하세요.");
+        }
     }
 
     private void deleteBook() {
@@ -280,12 +307,16 @@ public class BookClub {
     }
 
     private void managePendingBooks() {
-        System.out.println("신청 도서 목록:");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.println("        📖 신청 도서 목록 📖        ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
         for (Book book : pendingBooks) {
             System.out.println(book);
         }
 
-        System.out.print("승인할 책 제목: ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.println("        ✏️ 승인할 책 제목 ✏️        ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
         String title = scanner.nextLine();
 
         if (title.isEmpty()) {
@@ -294,7 +325,7 @@ public class BookClub {
 
         for (Book book : pendingBooks) {
             if (book.getTitle().equals(title)) {
-                System.out.print("승인하시겠습니까? (y/n): ");
+                System.out.print("승인하시겠습니까? [y/n]: ");
                 String response = scanner.nextLine();
                 if (response.equalsIgnoreCase("y")) {
                     book.approve();
@@ -309,19 +340,22 @@ public class BookClub {
             }
         }
 
-        System.out.println("도서를 찾을 수 없습니다.");
+        System.out.println("해당 도서를 찾을 수 없습니다.");
     }
 
     private void memberMenu(Member member) {
         while (true) {
-            System.out.println("=== 회원 메뉴 ===");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.println("          🥔 회원 메뉴 🥔          ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
             System.out.println("1. 도서 신청");
             System.out.println("2. 도서 조회");
             System.out.println("3. 도서 평가");
             System.out.println("4. 관심 도서");
             System.out.println("5. 로그아웃");
             System.out.println("6. 종료");
-            System.out.print("선택: ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.print("▶️ ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
 
@@ -349,13 +383,13 @@ public class BookClub {
     }
 
     private void applyBook() {
-        System.out.print("신청할 책 제목: ");
+        System.out.print("TITLE: ");
         String title = scanner.nextLine();
-        System.out.print("저자: ");
+        System.out.print("AUTHOR: ");
         String author = scanner.nextLine();
-        System.out.print("출판 연도: ");
+        System.out.print("YEAR OF PUBLICATION: ");
         int year = scanner.nextInt();
-        System.out.print("가격: ");
+        System.out.print("PRICE: ");
         int price = scanner.nextInt();
         scanner.nextLine(); // Consume newline
 
@@ -365,8 +399,8 @@ public class BookClub {
 
     private void viewBooks() {
         String[] calm = {"책 제목", "저자", "출판", "가격", "위시", "한줄평가"};
-
-        System.out.println("책 목록:");
+        System.out.println("―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――");
+        System.out.println("                                                         📖 목록 📖                                                         ");
         System.out.println("―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――");
         System.out.print(tableFormat(calm));
         System.out.println("*****************************************************************************************************************************");
@@ -394,19 +428,21 @@ public class BookClub {
     }
 
     private void reviewBook() {
-        System.out.println("책 목록:");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.println("          📖 도서 목록 📖          ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
         for (int i = 0; i < books.size(); i++) {
             Book book = books.get(i);
             System.out.printf("%d. %s%n", i + 1, book.getTitle());
         }
-
-        System.out.print("평가할 책 번호: ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.print("▶️ ");
         int index = scanner.nextInt() - 1;
         scanner.nextLine(); // Consume newline
 
         if (index >= 0 && index < books.size()) {
             Book book = books.get(index);
-            System.out.print("한줄 평가: ");
+            System.out.print("평가하기: ");
             book.setReview(scanner.nextLine());
             System.out.println("평가가 등록되었습니다.");
         } else {
@@ -415,13 +451,15 @@ public class BookClub {
     }
 
     private void wishlistBook() {
-        System.out.println("책 목록:");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.println("          📖 도서 목록 📖          ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
         for (int i = 0; i < books.size(); i++) {
             Book book = books.get(i);
-            System.out.printf("%d. %s | %s%n", i + 1, book.getTitle(), book.getAuthor());
+            System.out.printf("%d. %s ｜ %s%n", i + 1, book.getTitle(), book.getAuthor());
         }
-
-        System.out.print("위시리스트에 추가할 책 번호: ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.print("▶️ ");
         int index = scanner.nextInt() - 1;
         scanner.nextLine(); // Consume newline
 
@@ -434,32 +472,83 @@ public class BookClub {
     }
 
     private void updateMember() {
-        System.out.print("수정할 회원 이름: ");
-        String name = scanner.nextLine();
-
-        for (Member member : members) {
-            if (member.getName().equals(name)) {
-                System.out.print("새 이름: ");
-                member.setName(scanner.nextLine());
-                System.out.print("새 이메일: ");
-                member.setEmail(scanner.nextLine());
-                System.out.print("새 비밀번호: ");
-                member.setPassword(scanner.nextLine());
-
-                System.out.println("회원 정보가 수정되었습니다.");
-                return;
-            }
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.println("          🥔 회원 목록 🥔          ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        // 회원 목록 출력
+        for (int i = 0; i < members.size(); i++) {
+            Member member = members.get(i);
+            System.out.println((i + 1) + ". 이름: " + member.getName() + ", 이메일: " + member.getEmail());
         }
 
-        System.out.println("회원을 찾을 수 없습니다.");
+        // 선택할 회원 번호 입력 받기
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.print("▶️ ");
+        int memberIndex = scanner.nextInt();
+        scanner.nextLine(); // 개행 문자 처리
+
+        // 입력한 번호에 해당하는 회원 찾기
+        if (memberIndex >= 1 && memberIndex <= members.size()) {
+            Member selectedMember = members.get(memberIndex - 1);
+
+            // 수정할 정보 입력 받기
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.println("        🥔 현재 회원 정보 🥔        ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.println("NAME: " + selectedMember.getName());
+            System.out.println("E-MAIL: " + selectedMember.getEmail());
+            System.out.println("PASSWORD: " + selectedMember.getPassword());
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.print(" ※변경을 원하지 않는 항목은 엔터 입력※ ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.print("NEW NAME: ");
+            String newName = scanner.nextLine();
+            if (!newName.isEmpty()) {
+                selectedMember.setName(newName);
+            }
+
+            System.out.print("NEW E-MAIL: ");
+            String newEmail = scanner.nextLine();
+            if (!newEmail.isEmpty()) {
+                selectedMember.setEmail(newEmail);
+            }
+
+            System.out.print("NEW PASSWORD: ");
+            String newPassword = scanner.nextLine();
+            if (!newPassword.isEmpty()) {
+                selectedMember.setPassword(newPassword);
+            }
+
+            System.out.println("회원 정보가 수정되었습니다.");
+        } else {
+            System.out.println("잘못된 회원 번호입니다. 다시 시도하세요.");
+        }
     }
 
     private void deleteMember() {
-        System.out.print("삭제할 회원 이름: ");
-        String name = scanner.nextLine();
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        System.out.println("          🥔 회원 목록 🥔          ");
+        System.out.println("―――――――――――――――――――――――――――――――――――――");
+        // 회원 목록 출력
+        System.out.println("삭제할 회원을 선택하세요:");
+        for (int i = 0; i < members.size(); i++) {
+            Member member = members.get(i);
+            System.out.println((i + 1) + ". NAME: " + member.getName() + ", E-MAIL: " + member.getEmail());
+        }
 
-        members.removeIf(member -> member.getName().equals(name));
-        System.out.println("회원이 삭제되었습니다.");
+        // 선택할 회원 번호 입력 받기
+        System.out.print("▶️ ");
+        int memberIndex = scanner.nextInt();
+        scanner.nextLine(); // 개행 문자 처리
+
+        // 입력한 번호에 해당하는 회원 삭제
+        if (memberIndex >= 1 && memberIndex <= members.size()) {
+            Member selectedMember = members.get(memberIndex - 1);
+            members.remove(selectedMember);
+            System.out.println("회원이 삭제되었습니다.");
+        } else {
+            System.out.println("잘못된 회원 번호입니다. 다시 시도하세요.");
+        }
     }
 
     public static void main(String[] args) {
@@ -467,11 +556,14 @@ public class BookClub {
         Scanner scanner = new Scanner(System.in);
 
         while (true) {
-            System.out.println("=== 메인 화면 ===");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.println("🥔📖 건지 감자껍질파이 북클럽 📖🥔");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
             System.out.println("1. 로그인");
-            System.out.println("2. 일반 회원가입");
-            System.out.println("3. 관리자 회원가입");
-            System.out.print("선택: ");
+            System.out.println("2. 회원가입");
+            System.out.println("3. 종료");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.print("▶️ ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
 

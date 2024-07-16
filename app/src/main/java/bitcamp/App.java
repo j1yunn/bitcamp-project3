@@ -8,11 +8,14 @@ public class App {
         BookClub bookClub = new BookClub();
 
         while (true) {
-            System.out.println("=== 독서 모임 프로그램 ===");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.println("🥔📖 건지 감자껍질파이 북클럽 📖🥔");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
             System.out.println("1. 로그인");
             System.out.println("2. 회원가입");
             System.out.println("3. 종료");
-            System.out.print("선택: ");
+            System.out.println("―――――――――――――――――――――――――――――――――――――");
+            System.out.print("▶️ ");
             int choice = scanner.nextInt();
             scanner.nextLine(); // Consume newline
 
@@ -21,10 +24,13 @@ public class App {
                     bookClub.login();
                     break;
                 case 2:
-                    System.out.println("회원가입 유형을 선택하세요:");
+                    System.out.println("―――――――――――――――――――――――――――――――――――――");
+                    System.out.println("    ⭐ 회원가입 유형 선택하기 ⭐    ");
+                    System.out.println("―――――――――――――――――――――――――――――――――――――");
                     System.out.println("1. 일반 회원가입");
                     System.out.println("2. 관리자 회원가입");
-                    System.out.print("선택: ");
+                    System.out.println("―――――――――――――――――――――――――――――――――――――");
+                    System.out.print("▶️ ");
                     int registerChoice = scanner.nextInt();
                     scanner.nextLine(); // Consume newline
 
